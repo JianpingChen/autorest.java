@@ -1,0 +1,1332 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Azure Communication Chat Service",
+    "description": "Azure Communication Chat Service",
+    "contact": {
+      "email": "acsdevexdisc@microsoft.com"
+    },
+    "version": "2020-07-20-preview1"
+  },
+  "paths": {
+    "/chat/threads/{threadId}/readreceipts": {
+      "get": {
+        "tags": [
+          "Conversations"
+        ],
+        "summary": "Gets read receipts for a thread",
+        "operationId": "Chat_GetReadReceipts",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Thread id  to get the read receipts for",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The action returns the requested `ReadReceipt` resources.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ReadReceipt"
+              }
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get thread read receipts": {
+            "$ref": "./examples/Conversations_Chat_GetReadReceipts.json"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Conversations"
+        ],
+        "summary": "Posts a Read Receipt Event to a thread, on behalf of a user",
+        "operationId": "Chat_SendReadReceipt",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Id of the thread",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request payload for sending a read receipt",
+            "schema": {
+              "$ref": "#/definitions/PostReadReceiptRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Request successful."
+          }
+        },
+        "x-ms-examples": {
+          "Post read receipt": {
+            "$ref": "./examples/Conversations_Chat_PostReadReceipt.json"
+          }
+        }
+      }
+    },
+    "/chat/threads/{threadId}/messages": {
+      "post": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Sends a message to a thread identified by {threadId}",
+        "operationId": "Chat_SendMessage",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "The thread id to send the message to.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Details of the message to create.",
+            "schema": {
+              "$ref": "#/definitions/CreateMessageRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Message created, the `Location` header contains the URL for the newly created message",
+            "schema": {
+              "$ref": "#/definitions/CreateMessageResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Send Message": {
+            "$ref": "./examples/Messages_Chat_SendMessage.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Gets a list of message from a thread identified by {threadId}",
+        "operationId": "Chat_GetMessages",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "The thread id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "The number of messages being requested.",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "startTime",
+            "description": "The start time where the range query. This is represented by number of seconds since epoch time.",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "syncState",
+            "description": "The continuation token that previous request obtained. This is used for paging.",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetMessagesResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get messages with pagination (Page Size)": {
+            "$ref": "./examples/Messages_Chat_GetMessagesWithPageSize.json"
+          },
+          "Get messages with pagination (Sync State Token)": {
+            "$ref": "./examples/Messages_Chat_GetMessagesWithSyncState.json"
+          }
+        }
+      }
+    },
+    "/chat/threads/{threadId}/messages/{messageId}": {
+      "get": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Gets a message identified by {messageId}",
+        "operationId": "Chat_GetMessage",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "The thread id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "messageId",
+            "description": "The message id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The action returns a `Message` resource.",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Message": {
+            "$ref": "./examples/Messages_Chat_GetMessage.json"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Updates a message identified by {threadId} and {messageId}",
+        "operationId": "Chat_UpdateMessage",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "The thread id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "messageId",
+            "description": "The message id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Details of the request to update the message.",
+            "schema": {
+              "$ref": "#/definitions/UpdateMessageRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Message is successfully updated."
+          }
+        },
+        "x-ms-examples": {
+          "Update message content": {
+            "$ref": "./examples/Messages_Chat_UpdateMessage.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Deletes a message identified by {threadId} and {messageId}",
+        "operationId": "Chat_DeleteMessage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "The thread id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "messageId",
+            "description": "The message id of the message.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Message is successfully updated."
+          }
+        },
+        "x-ms-examples": {
+          "Delete message": {
+            "$ref": "./examples/Messages_Chat_DeleteMessage.json"
+          }
+        }
+      }
+    },
+    "/chat/threads/{threadId}/typing": {
+      "post": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Posts a Typing Event to a thread, on behalf of a user",
+        "operationId": "Chat_NotifyUserTyping",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Id of the thread",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful."
+          }
+        },
+        "x-ms-examples": {
+          "Post typing event to a thread": {
+            "$ref": "./examples/Messages_Chat_PostTypingEvent.json"
+          }
+        }
+      }
+    },
+    "/chat/threads/{threadId}/members": {
+      "get": {
+        "tags": [
+          "ThreadMembers"
+        ],
+        "summary": "Gets the members of a thread",
+        "operationId": "Chat_GetThreadMembers",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Thread id to get members for",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The action returns the members of a thread.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ThreadMember"
+              }
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get thread members": {
+            "$ref": "./examples/ThreadMembers_Chat_GetThreadMembers.json"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ThreadMembers"
+        ],
+        "summary": "Adds thread members to a thread. If members already exist, no change occurs.",
+        "operationId": "Chat_AddThreadMembers",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Id of the thread to add members to",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Thread members to be added to the thread.",
+            "schema": {
+              "$ref": "#/definitions/AddThreadMembersRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Request successful. The members identified by the request payload have been added to the thread."
+          }
+        },
+        "x-ms-examples": {
+          "Add thread members": {
+            "$ref": "./examples/ThreadMembers_Chat_AddThreadMembers.json"
+          }
+        }
+      }
+    },
+    "/chat/threads/{threadId}/members/{memberId}": {
+      "delete": {
+        "tags": [
+          "ThreadMembers"
+        ],
+        "summary": "Remove a member from a thread",
+        "operationId": "Chat_RemoveThreadMember",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Thread id to remove members from",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "memberId",
+            "description": "Id of the thread member to remove from the thread",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The member has been removed from the thread."
+          },
+          "404": {
+            "description": "Request unsuccessful. The member to be removed doesn't exist in the thread, or the thread doesn't exist."
+          }
+        },
+        "x-ms-examples": {
+          "Remove thread member": {
+            "$ref": "./examples/ThreadMembers_Chat_RemoveThreadMember.json"
+          }
+        }
+      }
+    },
+    "/chat/threads": {
+      "post": {
+        "tags": [
+          "Threads"
+        ],
+        "summary": "Creates a chat thread",
+        "operationId": "Chat_CreateThread",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request payload for creating a chat thread",
+            "schema": {
+              "$ref": "#/definitions/CreateThreadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Thread created, the `Location` header contains the URL for the newly created thread",
+            "schema": {
+              "$ref": "#/definitions/CreateThreadResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Group Chat": {
+            "$ref": "./examples/Threads_Chat_CreateThread_Group.json"
+          },
+          "1 on 1 Chat": {
+            "$ref": "./examples/Threads_Chat_CreateThread_Sticky.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Threads"
+        ],
+        "summary": "Gets a list of threads for a user identified by {userId}",
+        "operationId": "Chat_GetThreads",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "The number of threads being requested.",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "startTime",
+            "description": "The start time where the range query. This is represented by number of seconds since epoch time.",
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "query",
+            "name": "syncState",
+            "description": "The continuation token that previous request obtained. This is used for paging.",
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The action returns a `GetThreadsResponse` resource.",
+            "schema": {
+              "$ref": "#/definitions/GetThreadsResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Threads with pagination (Page Size)": {
+            "$ref": "./examples/Threads_Chat_GetThreadsWithPageSize.json"
+          },
+          "Get Threads with pagination (Sync State Token)": {
+            "$ref": "./examples/Threads_Chat_GetThreadsWithSyncState.json"
+          }
+        }
+      }
+    },
+    "/chat/threads/{threadId}": {
+      "patch": {
+        "tags": [
+          "Threads"
+        ],
+        "summary": "Updates a thread's properties",
+        "operationId": "Chat_UpdateThread",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "The id of the thread to edit.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request payload for updating a chat thread",
+            "schema": {
+              "$ref": "#/definitions/UpdateThreadRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Thread was successfully updated."
+          }
+        },
+        "x-ms-examples": {
+          "Update Thread Topic": {
+            "$ref": "./examples/Threads_Chat_UpdateThreadTopic.json"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Threads"
+        ],
+        "summary": "Gets a chat thread",
+        "operationId": "Chat_GetThread",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Thread id  to get",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The action returns a `Thread` resource.",
+            "schema": {
+              "$ref": "#/definitions/Thread"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Thread": {
+            "$ref": "./examples/Threads_Chat_GetThread.json"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Threads"
+        ],
+        "summary": "Deletes a thread",
+        "operationId": "Chat_DeleteThread",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "threadId",
+            "description": "Thread id  to delete",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "x-skypetoken",
+            "description": "Skype token header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "MS-CV",
+            "description": "[Correlation Vector](https://osgwiki.com/wiki/CorrelationVector). If a value is not provided a randomly generated correlation vector would be returned in the response headers.",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "api-version",
+            "description": "Version of API to invoke.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request successful. The `Thread` resource is deleted."
+          },
+          "404": {
+            "description": "Request unsuccessful. The thread be removed doesn't exist."
+          }
+        },
+        "x-ms-examples": {
+          "Delete Thread": {
+            "$ref": "./examples/Threads_Chat_DeleteThread.json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ReadReceipt": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "description": "Id for `ReadReceipt` sender",
+          "type": "string",
+          "example": "8:spool:8540c0de-899f-5cce-acb5-3ec493af3800_aabbcc-0011223344"
+        },
+        "messageId": {
+          "description": "Id for the message that has been read. This id is server generated.",
+          "type": "string",
+          "example": "1591137790240"
+        },
+        "readTimestamp": {
+          "format": "int64",
+          "description": "Read receipt timestamp",
+          "type": "integer"
+        },
+        "clientMessageId": {
+          "description": "Client message id specified in the Microsoft.AzureCommunicationService.Gateway.Models.Client.CreateMessageRequest.\r\nThis Id is a client-specific Id in a numeric unsigned Int64 format. It can be used for client deduping, among other client usages.",
+          "type": "string",
+          "example": "1591137790240"
+        }
+      }
+    },
+    "PostReadReceiptRequest": {
+      "required": [
+        "clientMessageId",
+        "messageId"
+      ],
+      "type": "object",
+      "properties": {
+        "clientMessageId": {
+          "description": "The client message Id specified when the message was sent.\r\nThis Id is a client-specific Id in a numeric unsigned Int64 format. It can be used for client deduping, among other client usages.",
+          "type": "string",
+          "example": "18446744073709551615"
+        },
+        "messageId": {
+          "description": "Id of the latest message read by current user",
+          "type": "string",
+          "example": "1592435762364"
+        }
+      }
+    },
+    "MessagePriority": {
+      "enum": [
+        "Normal",
+        "High"
+      ],
+      "type": "string"
+    },
+    "CreateMessageRequest": {
+      "required": [
+        "content"
+      ],
+      "type": "object",
+      "properties": {
+        "clientMessageId": {
+          "description": "This Id is a client-specific Id in a numeric unsigned Int64 format. It can be used for client deduping, among other client usages.",
+          "type": "string",
+          "example": "18446744073709551615"
+        },
+        "priority": {
+          "$ref": "#/definitions/MessagePriority"
+        },
+        "content": {
+          "description": "Chat message content.",
+          "type": "string",
+          "example": "Come one guys, lets go for lunch together."
+        },
+        "senderDisplayName": {
+          "description": "The display name of the sender.",
+          "type": "string",
+          "example": "Bob Admin"
+        }
+      }
+    },
+    "CreateMessageResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id of the message. This id is server generated.",
+          "type": "string",
+          "example": "123456789"
+        },
+        "clientMessageId": {
+          "description": "This Id is a client-specific Id in a numeric unsigned Int64 format. It can be used for client deduping, among other client usages.",
+          "type": "string",
+          "example": "18446744073709551615"
+        }
+      }
+    },
+    "Message": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id of the message. This id is server generated.",
+          "type": "string",
+          "example": "123456789"
+        },
+        "messageType": {
+          "description": "Type of the message. The valid value should be \"Text\" or \"RichText\".",
+          "type": "string",
+          "example": "Text"
+        },
+        "clientMessageId": {
+          "description": "The client message Id specified when the message was sent.\r\nThis Id is a client-specific Id in a numeric unsigned Int64 format. It can be used for client deduping, among other client usages.",
+          "type": "string",
+          "example": "18446744073709551615"
+        },
+        "priority": {
+          "$ref": "#/definitions/MessagePriority"
+        },
+        "version": {
+          "description": "Version of the message.",
+          "type": "string"
+        },
+        "content": {
+          "description": "Content of the message.",
+          "type": "string",
+          "example": "Come one guys, lets go for lunch together."
+        },
+        "senderDisplayName": {
+          "description": "Display name of the message sender.",
+          "type": "string",
+          "example": "Jane"
+        },
+        "originalArrivalTime": {
+          "format": "date-time",
+          "description": "The timestamp when the message arrived at the server. The timestamp is in ISO8601 format: `yyyy-MM-ddTHH:mm:ssZ`.",
+          "type": "string",
+          "example": "2020-06-05T22:55:41.6460000-07:00"
+        },
+        "from": {
+          "description": "The id of the message sender.",
+          "type": "string",
+          "example": "8:spool:8540c0de-899f-5cce-acb5-3ec493af3800_aabbcc-0011223344"
+        },
+        "deleteTime": {
+          "format": "int64",
+          "description": "The timestamp when the message was deleted in Unix time (epoch time) in milliseconds.",
+          "type": "integer",
+          "example": 1591142858100
+        },
+        "editTime": {
+          "format": "int64",
+          "description": "The timestamp when the message was edited in Unix time (epoch time) in milliseconds.",
+          "type": "integer",
+          "example": 1591142858100
+        }
+      }
+    },
+    "GetMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "description": "List of messages.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        },
+        "syncState": {
+          "description": "Continuation link to get new and edited messages",
+          "type": "string"
+        },
+        "backwardLink": {
+          "description": "If there are more messages that can be retrieved, the backward link will be populated.",
+          "type": "string"
+        }
+      }
+    },
+    "UpdateMessageRequest": {
+      "required": [
+        "content"
+      ],
+      "type": "object",
+      "properties": {
+        "content": {
+          "description": "Chat message content.",
+          "type": "string",
+          "example": "Come one guys, lets go for lunch together."
+        }
+      }
+    },
+    "MemberRole": {
+      "description": "Role of the thread member. The valid value should be \"User\" or \"Admin\".",
+      "enum": [
+        "Admin",
+        "User"
+      ],
+      "type": "string"
+    },
+    "ThreadMember": {
+      "description": "A member of the thread",
+      "required": [
+        "id",
+        "memberRole"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id of the thread member in the format `8:spool:ResourceId_AcsUserId`",
+          "type": "string",
+          "example": "8:spool:8540c0de-899f-5cce-acb5-3ec493af3800_aabbcc-0011223344"
+        },
+        "displayName": {
+          "description": "Display name for the thread member",
+          "type": "string",
+          "example": "Bob"
+        },
+        "memberRole": {
+          "$ref": "#/definitions/MemberRole"
+        },
+        "shareHistoryTime": {
+          "description": "Time from which the group chat history is shared with the member in EPOCH time (milliseconds)",
+          "type": "string",
+          "example": "0"
+        }
+      }
+    },
+    "AddThreadMembersRequest": {
+      "required": [
+        "members"
+      ],
+      "type": "object",
+      "properties": {
+        "members": {
+          "description": "Members to add to a thread",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThreadMember"
+          }
+        }
+      }
+    },
+    "CreateThreadRequest": {
+      "required": [
+        "members",
+        "topic"
+      ],
+      "type": "object",
+      "properties": {
+        "topic": {
+          "description": "Thread topic",
+          "type": "string",
+          "example": "Lunch Thread"
+        },
+        "isStickyThread": {
+          "description": "Flag if a thread is sticky - sticky thread has an immutable member list, members cannot be added or removed.\r\nAt the moment we only support sticky threads with two members.",
+          "type": "boolean",
+          "example": false
+        },
+        "members": {
+          "description": "Members to be added to the thread",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThreadMember"
+          }
+        }
+      }
+    },
+    "CreateThreadResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Thread Id",
+          "type": "string",
+          "example": "19:uni01_uy5ucb66ugp3lrhe7pxso6xx4hsmm3dl6eyjfefv2n6x3rrurpea@thread.v2"
+        }
+      }
+    },
+    "Thread": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Thread id",
+          "type": "string",
+          "example": "19:uni01_uy5ucb66ugp3lrhe7pxso6xx4hsmm3dl6eyjfefv2n6x3rrurpea@thread.v2"
+        },
+        "topic": {
+          "description": "Thread topic",
+          "type": "string",
+          "example": "Lunch Thread"
+        },
+        "createdAt": {
+          "description": "Thread creation time in Unix time (epoch time) in milliseconds",
+          "type": "string",
+          "example": "1591142858245"
+        },
+        "createdBy": {
+          "description": "Id of the thread owner",
+          "type": "string",
+          "example": "8:spool:8540c0de-899f-5cce-acb5-3ec493af3800_aabbcc-0011223344"
+        },
+        "isStickyThread": {
+          "description": "Flag if a thread is sticky - sticky thread has an immutable member list, members cannot be added or removed.",
+          "type": "boolean",
+          "example": false
+        },
+        "members": {
+          "description": "Members of the thread",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThreadMember"
+          }
+        }
+      }
+    },
+    "GetThreadsResponse": {
+      "type": "object",
+      "properties": {
+        "threads": {
+          "description": "List of threads.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Thread"
+          }
+        },
+        "syncState": {
+          "description": "Continuation link to get new and edited threads",
+          "type": "string"
+        },
+        "backwardLink": {
+          "description": "If there are more threads that can be retrieved, the backward link will be populated.",
+          "type": "string"
+        }
+      }
+    },
+    "UpdateThreadRequest": {
+      "required": [
+        "topic"
+      ],
+      "type": "object",
+      "properties": {
+        "topic": {
+          "description": "Thread topic",
+          "type": "string",
+          "example": "Lunch Thread"
+        }
+      }
+    }
+  }
+}
