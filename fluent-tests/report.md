@@ -1,5 +1,5 @@
 # Java Codegen Report
-Generated at 2021-05-20T19:34:50.704999
+Generated at 2021-05-21T19:35:23.938939
 ## Success
 <details>
 <summary>RP count: 173</summary>
@@ -199,7 +199,7 @@ Generated at 2021-05-20T19:34:50.704999
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -273,8 +273,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.898 s
-[INFO] Finished at: 2021-05-20T18:29:23Z
+[INFO] Total time:  3.756 s
+[INFO] Finished at: 2021-05-21T18:31:14Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-applicationinsights: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-applicationinsights/src/main/java/com/azure/resourcemanager/applicationinsights/fluent/OperationsClient.java:[46,39] method list() is already defined in interface com.azure.resourcemanager.applicationinsights.fluent.OperationsClient
@@ -348,8 +348,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.027 s
-[INFO] Finished at: 2021-05-20T18:31:19Z
+[INFO] Total time:  5.212 s
+[INFO] Finished at: 2021-05-21T18:33:11Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-automation: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-automation/src/main/java/com/azure/resourcemanager/automation/fluent/DscConfigurationsClient.java:[201,27] method update(java.lang.String,java.lang.String,java.lang.String) is already defined in interface com.azure.resourcemanager.automation.fluent.DscConfigurationsClient
@@ -375,7 +375,7 @@ FATAL: Error: Name is empty!
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -1049,7 +1049,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [IntegrationRuntimeStatusResponse, LinkedServiceResource, AccessPolicyResponse, DataFlowDebugCommandResponse, TriggerQueryResponse, PipelineRun, IntegrationRuntimeNodeIpAddress, Operation, ExposureControlResponse, IntegrationRuntimeConnectionInfo, PipelineResource, PipelineRunsQueryResponse, ManagedPrivateEndpointResource, PrivateLinkResourcesWrapper, Factory, TriggerRunsQueryResponse, CreateDataFlowDebugSessionResponse, DatasetResource, CreateRunResponse, ManagedVirtualNetworkResource, DataFlowDebugSessionInfo, IntegrationRuntimeAuthKeys, AddDataFlowToDebugSessionResponse, TriggerResource, GitHubAccessTokenResponse, SsisObjectMetadataListResponse, ExposureControlBatchResponse, IntegrationRuntimeResource, ActivityRunsQueryResponse, SsisObjectMetadataStatusResponse, PrivateEndpointConnectionResource, IntegrationRuntimeMonitoringData, DataFlowResource, SelfHostedIntegrationRuntimeNode, TriggerSubscriptionOperationStatus]
+INFORMATION (FluentMapper): Add Inner to response types: [CreateDataFlowDebugSessionResponse, GitHubAccessTokenResponse, IntegrationRuntimeConnectionInfo, SelfHostedIntegrationRuntimeNode, ActivityRunsQueryResponse, ManagedPrivateEndpointResource, Factory, SsisObjectMetadataListResponse, IntegrationRuntimeResource, LinkedServiceResource, PrivateEndpointConnectionResource, AccessPolicyResponse, PipelineRunsQueryResponse, IntegrationRuntimeStatusResponse, TriggerQueryResponse, DataFlowResource, SsisObjectMetadataStatusResponse, IntegrationRuntimeNodeIpAddress, CreateRunResponse, ExposureControlBatchResponse, TriggerRunsQueryResponse, Operation, PipelineRun, DataFlowDebugCommandResponse, AddDataFlowToDebugSessionResponse, ExposureControlResponse, TriggerSubscriptionOperationStatus, DataFlowDebugSessionInfo, IntegrationRuntimeAuthKeys, PipelineResource, IntegrationRuntimeMonitoringData, DatasetResource, PrivateLinkResourcesWrapper, TriggerResource, ManagedVirtualNetworkResource]
 
 ```
 **stderr**
@@ -1119,7 +1119,7 @@ java.lang.IllegalArgumentException: discriminator not found in type ManagedVirtu
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -1265,7 +1265,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [Device, IOsmamPolicy, AndroidMamPolicy, Location, OperationResult, WipeDeviceOperationResult, FlaggedUser, Application, GroupItem, FlaggedEnrolledApp]
+INFORMATION (FluentMapper): Add Inner to response types: [OperationResult, Application, IOsmamPolicy, FlaggedEnrolledApp, WipeDeviceOperationResult, Location, Device, FlaggedUser, AndroidMamPolicy, GroupItem]
 
 ```
 **stderr**
@@ -1317,7 +1317,7 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -1463,8 +1463,8 @@ Use --help to get help information.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.789 s
-[INFO] Finished at: 2021-05-20T19:10:29Z
+[INFO] Total time:  3.392 s
+[INFO] Finished at: 2021-05-21T19:12:03Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-privatedns: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-privatedns/src/main/java/com/azure/resourcemanager/privatedns/fluent/RecordSetsClient.java:[284,20] method createOrUpdate(java.lang.String,java.lang.String,com.azure.resourcemanager.privatedns.models.RecordType,java.lang.String,com.azure.resourcemanager.privatedns.fluent.models.RecordSetInner) is already defined in interface com.azure.resourcemanager.privatedns.fluent.RecordSetsClient
@@ -1612,8 +1612,8 @@ Use --help to get help information.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.735 s
-[INFO] Finished at: 2021-05-20T19:11:06Z
+[INFO] Total time:  2.656 s
+[INFO] Finished at: 2021-05-21T19:12:37Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-purview: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-purview/src/main/java/com/azure/resourcemanager/purview/models/AccountPropertiesSystemData.java:[14,56] cannot inherit from final com.azure.core.management.SystemData
@@ -1640,7 +1640,7 @@ Use --help to get help information.
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -1697,7 +1697,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [CalculatePriceResponse, QuotaRequestDetails, Catalog, QuotaRequestSubmitResponse201, QuotaRequestOneResourceSubmitResponse, CalculateExchangeOperationResultResponse, ReservationResponse, AvailableScopeProperties, ExchangeOperationResultResponse, AppliedReservations, ReservationOrderResponse, CurrentQuotaLimitBase, OperationResponse]
+INFORMATION (FluentMapper): Add Inner to response types: [QuotaRequestOneResourceSubmitResponse, QuotaRequestSubmitResponse201, CurrentQuotaLimitBase, QuotaRequestDetails, Catalog, ReservationOrderResponse, CalculateExchangeOperationResultResponse, ReservationResponse, AvailableScopeProperties, OperationResponse, CalculatePriceResponse, ExchangeOperationResultResponse, AppliedReservations]
 
 ```
 **stderr**
@@ -1765,7 +1765,7 @@ java.lang.NullPointerException
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -1789,7 +1789,7 @@ Use --help to get help information.
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -1980,7 +1980,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [IoTSecuritySolutionAnalyticsModel, SecureScoreControlDetails, IotAlertType, SecurityAssessment, IotAlert, Software, RuleResults, OnPremiseIotSensor, DeviceSecurityGroup, IotRecommendation, SecurityContact, AdaptiveApplicationControlGroup, ConnectionStrings, IotDefenderSettingsModel, RegulatoryComplianceAssessment, SecureScoreControlDefinitionItem, IoTSecurityAggregatedRecommendation, SecurityTask, IotSensorsList, AllowedConnectionsResource, ConnectorSetting, RulesResults, AdaptiveNetworkHardening, JitNetworkAccessRequest, IoTSecurityAggregatedAlert, Compliance, IoTSecuritySolutionAnalyticsModelList, SecuritySolutionsReferenceDataList, IotSitesModel, IotAlertTypeList, IotSensorsModel, PricingList, IoTSecuritySolutionModel, Pricing, AdvancedThreatProtectionSetting, JitNetworkAccessPolicy, IotAlertModel, Operation, RegulatoryComplianceStandard, Scan, IngestionSettingToken, SecuritySubAssessment, TopologyResource, AscLocation, IotSitesList, IngestionSetting, IotDefenderSettingsList, RegulatoryComplianceControl, Device, InformationProtectionPolicy, Scans, IotRecommendationType, SecureScoreItem, AutomationValidationStatus, Automation, Alert, PackageDownloads, ScanResults, SecuritySolution, WorkspaceSetting, IotRecommendationModel, ServerVulnerabilityAssessmentsList, Setting, OnPremiseIotSensorsList, AdaptiveApplicationControlGroups, AutoProvisioningSetting, ServerVulnerabilityAssessment, DiscoveredSecuritySolution, IotRecommendationTypeList, SecurityAssessmentMetadata, ComplianceResult, ExternalSecuritySolution, AlertsSuppressionRule, ScanResult]
+INFORMATION (FluentMapper): Add Inner to response types: [IoTSecuritySolutionAnalyticsModel, TopologyResource, AscLocation, IngestionSettingToken, SecuritySolution, RuleResults, IoTSecurityAggregatedRecommendation, IoTSecuritySolutionAnalyticsModelList, IotSitesList, ServerVulnerabilityAssessment, RulesResults, ConnectorSetting, IotDefenderSettingsModel, PricingList, RegulatoryComplianceStandard, IotSitesModel, Scan, IotRecommendationTypeList, AdvancedThreatProtectionSetting, Alert, Device, SecuritySolutionsReferenceDataList, DiscoveredSecuritySolution, SecurityAssessment, ExternalSecuritySolution, SecureScoreControlDefinitionItem, AdaptiveNetworkHardening, IotSensorsModel, Compliance, ScanResult, Operation, IoTSecurityAggregatedAlert, RegulatoryComplianceAssessment, AllowedConnectionsResource, Scans, ComplianceResult, ServerVulnerabilityAssessmentsList, JitNetworkAccessPolicy, JitNetworkAccessRequest, IotAlert, PackageDownloads, ConnectionStrings, WorkspaceSetting, Automation, Pricing, Software, IoTSecuritySolutionModel, IotRecommendationType, IotRecommendation, SecuritySubAssessment, IotAlertModel, RegulatoryComplianceControl, AlertsSuppressionRule, SecureScoreItem, IotAlertTypeList, InformationProtectionPolicy, SecurityContact, DeviceSecurityGroup, SecurityTask, Setting, IotSensorsList, OnPremiseIotSensorsList, IotRecommendationModel, IngestionSetting, ScanResults, AutomationValidationStatus, OnPremiseIotSensor, AutoProvisioningSetting, SecurityAssessmentMetadata, AdaptiveApplicationControlGroup, IotAlertType, AdaptiveApplicationControlGroups, SecureScoreControlDetails, IotDefenderSettingsList]
 INFORMATION (FluentMapper): Add Inner for type 'SecureScoreControlDefinitionItem': []
 
 ```
@@ -2053,7 +2053,7 @@ java.lang.IllegalArgumentException: discriminator not found in type ExternalSecu
 
 **stdout**
 ```
-AutoRest code generation utility [cli version: 3.2.0; node: v14.17.0, max-memory: 2048 MB]
+AutoRest code generation utility [cli version: 3.2.1; node: v14.17.0, max-memory: 2048 MB]
 (C) 2018 Microsoft Corporation.
 https://aka.ms/autorest
    Loading AutoRest core      '/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist' (3.1.3)
@@ -2179,6 +2179,9 @@ WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive 
 WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:3618:4
 
+WARNING (PreviewVersionOverOneYear/R4024/SDKViolation): The API version:2015-11-01-preview having been in a preview state over one year , please move it to GA or retire.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6:2
+
 WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6750:4
 
@@ -2205,9 +2208,6 @@ WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:8450:4
-
-WARNING (PreviewVersionOverOneYear/R4024/SDKViolation): The API version:2015-11-01-preview having been in a preview state over one year , please move it to GA or retire.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6:2
 
 WARNING (DescriptionAndTitleMissing/R4021/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:7419:4
@@ -2259,7 +2259,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [ClientGroup, MapResponse, MachinesSummary, ClientGroupMember, Connection, Port, Liveness, Process, MachineGroup, Machine, ClientGroupMembersCount]
+INFORMATION (FluentMapper): Add Inner to response types: [ClientGroup, ClientGroupMembersCount, ClientGroupMember, Machine, Liveness, MachineGroup, MapResponse, MachinesSummary, Port, Process, Connection]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (FluentGen): Process for Fluent Lite, SDK integration disabled
 INFORMATION (FluentJavaSettings): Option, string, tag : package-2015-11-preview
@@ -2278,12 +2278,12 @@ INFORMATION (FluentGen): Write Text
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:24384) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:24429) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist/src_lib_autorest-core_ts.js:3015:19
     at ScheduleNode (/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist/src_lib_autorest-core_ts.js:1809:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:24384) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:24384) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:24429) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:24429) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 
 ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is defined without a 200 or 204 error response implementation,please add it.'
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6869:4
@@ -2357,8 +2357,8 @@ ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is def
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.547 s
-[INFO] Finished at: 2021-05-20T19:19:13Z
+[INFO] Total time:  3.334 s
+[INFO] Finished at: 2021-05-21T19:20:18Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-servicefabric: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-servicefabric/src/main/java/com/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[45,41] method list() is already defined in interface com.azure.resourcemanager.servicefabric.fluent.OperationsClient
@@ -2531,8 +2531,8 @@ ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is def
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.606 s
-[INFO] Finished at: 2021-05-20T19:20:24Z
+[INFO] Total time:  2.646 s
+[INFO] Finished at: 2021-05-21T19:21:26Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-softwareplan: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-softwareplan/src/main/java/com/azure/resourcemanager/softwareplan/implementation/HybridUseBenefitsImpl.java:[72,49] method list(java.lang.String) is already defined in class com.azure.resourcemanager.softwareplan.implementation.HybridUseBenefitsImpl
@@ -2678,8 +2678,8 @@ ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is def
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.649 s
-[INFO] Finished at: 2021-05-20T19:29:56Z
+[INFO] Total time:  1.549 s
+[INFO] Finished at: 2021-05-21T19:30:34Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-visualstudio: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-visualstudio/src/main/java/com/azure/resourcemanager/visualstudio/models/AccountResourceRequestOperationType.java:[13,50] <identifier> expected
