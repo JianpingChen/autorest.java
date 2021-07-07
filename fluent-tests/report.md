@@ -1,8 +1,8 @@
 # Java Codegen Report
-Generated at 2021-07-06T19:24:10.657547
+Generated at 2021-07-07T19:17:59.223397
 ## Success
 <details>
-<summary>RP count: 176</summary>
+<summary>RP count: 175</summary>
 
 - EnterpriseKnowledgeGraph
 - addons
@@ -165,7 +165,6 @@ Generated at 2021-07-06T19:24:10.657547
 - storagepool
 - storagesync
 - storsimple8000series
-- streamanalytics
 - subscription
 - support
 - synapse
@@ -193,6 +192,7 @@ Generated at 2021-07-06T19:24:10.657547
 - monitor
 - purview
 - softwareplan
+- streamanalytics
 - visualstudio
 
 ## Logs
@@ -250,8 +250,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.524 s
-[INFO] Finished at: 2021-07-06T18:11:52Z
+[INFO] Total time:  5.330 s
+[INFO] Finished at: 2021-07-07T18:11:39Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-automation: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-automation/src/main/java/com/azure/resourcemanager/automation/fluent/DscConfigurationsClient.java:[201,27] method update(java.lang.String,java.lang.String,java.lang.String) is already defined in interface com.azure.resourcemanager.automation.fluent.DscConfigurationsClient
@@ -423,7 +423,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [Device, AndroidMamPolicy, IOsmamPolicy, Application, WipeDeviceOperationResult, Location, FlaggedEnrolledApp, FlaggedUser, OperationResult, GroupItem]
+INFORMATION (FluentMapper): Add Inner to response types: [OperationResult, Application, IOsmamPolicy, FlaggedEnrolledApp, WipeDeviceOperationResult, Location, Device, FlaggedUser, AndroidMamPolicy, GroupItem]
 
 ```
 **stderr**
@@ -498,8 +498,8 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.071 s
-[INFO] Finished at: 2021-07-06T18:39:44Z
+[INFO] Total time:  1.799 s
+[INFO] Finished at: 2021-07-07T18:37:10Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-iotspaces/src/main/java/module-info.java:[10,55] package is empty or does not exist: com.azure.resourcemanager.iotspaces.fluent.models
@@ -581,8 +581,8 @@ Use --help to get help information.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.010 s
-[INFO] Finished at: 2021-07-06T18:48:10Z
+[INFO] Total time:  4.284 s
+[INFO] Finished at: 2021-07-07T18:44:58Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-monitor: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-monitor/src/main/java/com/azure/resourcemanager/monitor/models/DataCollectionRuleResourceSystemData.java:[14,65] cannot inherit from final com.azure.core.management.SystemData
@@ -829,8 +829,8 @@ java.lang.NullPointerException
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.041 s
-[INFO] Finished at: 2021-07-06T18:56:49Z
+[INFO] Total time:  2.753 s
+[INFO] Finished at: 2021-07-07T18:52:56Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-purview: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-purview/src/main/java/com/azure/resourcemanager/purview/models/AccountPropertiesSystemData.java:[14,56] cannot inherit from final com.azure.core.management.SystemData
@@ -914,7 +914,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [AvailableScopeProperties, QuotaRequestOneResourceSubmitResponse, ReservationOrderResponse, OperationResponse, QuotaRequestDetails, ReservationResponse, ExchangeOperationResultResponse, AppliedReservations, CalculateExchangeOperationResultResponse, Catalog, CurrentQuotaLimitBase, CalculatePriceResponse, QuotaRequestSubmitResponse201]
+INFORMATION (FluentMapper): Add Inner to response types: [CalculatePriceResponse, QuotaRequestDetails, Catalog, QuotaRequestSubmitResponse201, QuotaRequestOneResourceSubmitResponse, CalculateExchangeOperationResultResponse, ReservationResponse, AvailableScopeProperties, ExchangeOperationResultResponse, AppliedReservations, ReservationOrderResponse, CurrentQuotaLimitBase, OperationResponse]
 
 ```
 **stderr**
@@ -1183,7 +1183,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [SecureScoreControlDefinitionItem, AlertsSuppressionRule, IotSensorsList, RegulatoryComplianceControl, ScanResult, RuleResults, DeviceSecurityGroup, IoTSecurityAggregatedRecommendation, InformationProtectionPolicy, IotAlertModel, IotDefenderSettingsModel, Setting, SecureScoreItem, RegulatoryComplianceStandard, Device, IoTSecuritySolutionAnalyticsModelList, AdaptiveApplicationControlGroups, ConnectorSetting, IotAlertTypeList, IotRecommendationType, ConnectionStrings, SecuritySubAssessment, OnPremiseIotSensorsList, IngestionSetting, SecuritySolutionsReferenceDataList, JitNetworkAccessRequest, SecureScoreControlDetails, ServerVulnerabilityAssessmentsList, SecurityAssessmentMetadata, ExternalSecuritySolution, IotSensorsModel, IotSitesModel, OnPremiseIotSensor, DiscoveredSecuritySolution, IoTSecuritySolutionModel, AutoProvisioningSetting, PackageDownloads, JitNetworkAccessPolicy, Compliance, SecurityContact, TopologyResource, ComplianceResult, IngestionSettingToken, IotRecommendationTypeList, IotRecommendationModel, Scans, IotAlertType, IoTSecuritySolutionAnalyticsModel, ServerVulnerabilityAssessment, Software, SecuritySolution, AscLocation, Alert, Operation, RulesResults, AdaptiveNetworkHardening, Scan, RegulatoryComplianceAssessment, AdvancedThreatProtectionSetting, AutomationValidationStatus, ScanResults, Pricing, AdaptiveApplicationControlGroup, Automation, SecurityTask, IoTSecurityAggregatedAlert, IotDefenderSettingsList, AllowedConnectionsResource, IotSitesList, SecurityAssessment, WorkspaceSetting, PricingList]
+INFORMATION (FluentMapper): Add Inner to response types: [Alert, JitNetworkAccessRequest, IoTSecuritySolutionAnalyticsModelList, AlertsSuppressionRule, DiscoveredSecuritySolution, SecurityAssessment, AdaptiveApplicationControlGroups, ComplianceResult, IotRecommendationType, Scan, RulesResults, ConnectionStrings, SecureScoreItem, Operation, IotDefenderSettingsList, SecuritySolution, ExternalSecuritySolution, IotRecommendationModel, Scans, IotRecommendationTypeList, IotSitesModel, AdvancedThreatProtectionSetting, OnPremiseIotSensor, AutoProvisioningSetting, ConnectorSetting, RegulatoryComplianceControl, RegulatoryComplianceAssessment, RuleResults, AdaptiveApplicationControlGroup, JitNetworkAccessPolicy, SecuritySolutionsReferenceDataList, SecureScoreControlDetails, SecuritySubAssessment, SecurityTask, ServerVulnerabilityAssessmentsList, Device, IotSensorsList, DeviceSecurityGroup, PackageDownloads, Compliance, RegulatoryComplianceStandard, Automation, IotAlertModel, IoTSecuritySolutionModel, IotAlertTypeList, SecureScoreControlDefinitionItem, Software, IoTSecuritySolutionAnalyticsModel, ScanResult, IotSitesList, IoTSecurityAggregatedRecommendation, IngestionSetting, SecurityContact, IotDefenderSettingsModel, IoTSecurityAggregatedAlert, InformationProtectionPolicy, IotSensorsModel, AscLocation, SecurityAssessmentMetadata, IotAlertType, PricingList, ServerVulnerabilityAssessment, IngestionSettingToken, AdaptiveNetworkHardening, ScanResults, Pricing, AutomationValidationStatus, WorkspaceSetting, AllowedConnectionsResource, TopologyResource, OnPremiseIotSensorsList, Setting]
 INFORMATION (FluentMapper): Add Inner for type 'SecureScoreControlDefinitionItem': []
 
 ```
@@ -1382,11 +1382,11 @@ WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive 
 WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:3618:4
 
-WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6750:4
-
 WARNING (PreviewVersionOverOneYear/R4024/SDKViolation): The API version:2015-11-01-preview having been in a preview state over one year , please move it to GA or retire.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6:2
+
+WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6750:4
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6937:4
@@ -1462,7 +1462,7 @@ INFORMATION (FluentJavaSettings): Option, string, pom-file : null
 INFORMATION (FluentJavaSettings): Option, string, package-version : null
 INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [Port, ClientGroupMembersCount, MachinesSummary, Process, MachineGroup, MapResponse, ClientGroup, Connection, ClientGroupMember, Machine, Liveness]
+INFORMATION (FluentMapper): Add Inner to response types: [ClientGroupMember, Process, Port, MapResponse, Connection, MachinesSummary, ClientGroupMembersCount, MachineGroup, Liveness, ClientGroup, Machine]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (FluentGen): Process for Fluent Lite, SDK integration disabled
 INFORMATION (FluentJavaSettings): Option, string, tag : package-2015-11-preview
@@ -1481,12 +1481,14 @@ INFORMATION (FluentGen): Write Text
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:24621) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:24554) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist/src_lib_autorest-core_ts.js:3015:19
+    at runNextTicks (internal/process/task_queues.js:60:5)
+    at processImmediate (internal/timers.js:437:9)
     at ScheduleNode (/home/runner/.autorest/@autorest_core@3.1.3/node_modules/@autorest/core/dist/src_lib_autorest-core_ts.js:1809:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:24621) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:24621) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:24554) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:24554) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 
 ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is defined without a 200 or 204 error response implementation,please add it.'
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:6869:4
@@ -1611,8 +1613,8 @@ ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is def
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.050 s
-[INFO] Finished at: 2021-07-06T19:07:19Z
+[INFO] Total time:  2.568 s
+[INFO] Finished at: 2021-07-07T19:02:39Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-softwareplan: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-softwareplan/src/main/java/com/azure/resourcemanager/softwareplan/implementation/HybridUseBenefitsImpl.java:[72,49] method list(java.lang.String) is already defined in class com.azure.resourcemanager.softwareplan.implementation.HybridUseBenefitsImpl
@@ -1721,6 +1723,93 @@ ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is def
 </details>
 
 <details>
+<summary>streamanalytics</summary>
+
+**stdout**
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --< com.azure.resourcemanager:azure-resourcemanager-streamanalytics >---
+[INFO] Building Microsoft Azure SDK for StreamAnalytics Management 1.0.0-beta.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-streamanalytics ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-streamanalytics ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 254 source files to /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/TestDatasourceResultImpl.java:[24,33] cannot find symbol
+  symbol:   method status()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.TestDatasourceResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/QueryTestingResultImpl.java:[24,33] cannot find symbol
+  symbol:   method status()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.QueryTestingResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/QueryTestingResultImpl.java:[28,33] cannot find symbol
+  symbol:   method outputUri()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.QueryTestingResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[26,33] cannot find symbol
+  symbol:   method status()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[30,47] cannot find symbol
+  symbol:   method diagnostics()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[39,33] cannot find symbol
+  symbol:   method eventsDownloadUrl()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[43,33] cannot find symbol
+  symbol:   method lastArrivalTime()
+  location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[INFO] 7 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.396 s
+[INFO] Finished at: 2021-07-07T19:09:34Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-streamanalytics: Compilation failure: Compilation failure: 
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/TestDatasourceResultImpl.java:[24,33] cannot find symbol
+[ERROR]   symbol:   method status()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.TestDatasourceResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/QueryTestingResultImpl.java:[24,33] cannot find symbol
+[ERROR]   symbol:   method status()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.QueryTestingResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/QueryTestingResultImpl.java:[28,33] cannot find symbol
+[ERROR]   symbol:   method outputUri()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.QueryTestingResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[26,33] cannot find symbol
+[ERROR]   symbol:   method status()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[30,47] cannot find symbol
+[ERROR]   symbol:   method diagnostics()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[39,33] cannot find symbol
+[ERROR]   symbol:   method eventsDownloadUrl()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-streamanalytics/src/main/java/com/azure/resourcemanager/streamanalytics/implementation/SampleInputResultImpl.java:[43,33] cannot find symbol
+[ERROR]   symbol:   method lastArrivalTime()
+[ERROR]   location: class com.azure.resourcemanager.streamanalytics.fluent.models.SampleInputResultInner
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+```
+**stderr**
+```
+
+```
+</details>
+
+<details>
 <summary>visualstudio</summary>
 
 **stdout**
@@ -1758,8 +1847,8 @@ ERROR (DeleteOperationResponses/R4011/ARMViolation): The delete operation is def
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.565 s
-[INFO] Finished at: 2021-07-06T19:18:22Z
+[INFO] Total time:  1.680 s
+[INFO] Finished at: 2021-07-07T19:12:47Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-visualstudio: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/fluent_generated/azure-resourcemanager-visualstudio/src/main/java/com/azure/resourcemanager/visualstudio/models/AccountResourceRequestOperationType.java:[13,50] <identifier> expected
